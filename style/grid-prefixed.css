@@ -1,0 +1,185 @@
+.pageContainer {
+  max-width: 1200px;
+  margin: 50px auto;
+}
+
+.wrapper > div {
+  background: #eee;
+  padding: 1em;
+}
+
+.wrapper > div:nth-child(odd) {
+  background: #ddd;
+}
+
+.info {
+  color: red;
+}
+
+/* GRID 1 STYLES -------------------------------------------------------- */
+
+.wrapper1 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 70% 1em 30%;
+  grid-template-columns: 70% 30%;
+  /* grid-column-gap: 1em;
+  grid-row-gap: 1em; */
+  grid-gap: 1em;
+}
+
+/* GRID 2 STYLES -------------------------------------------------------- */
+
+/* use 'fr', NOT pixels, fractions, etc. */
+/* will reduce chance of margin/padding issues, esp when nesting */
+
+.wrapper2 {
+  display: -ms-grid;
+  display: grid;
+  /* grid-template-columns: 1fr 2fr 1fr; */
+  -ms-grid-columns: 1fr 1em 1fr 1em 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
+  /* grid-auto-rows: 100px; */
+  /* using the above, large content would break out */
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.nested {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1em 1fr 1em 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 70px;
+  grid-gap: 1em;
+}
+
+.nested > div {
+  border: 1px solid #333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/* GRID 3 STYLES -------------------------------------------------------- */
+
+.wrapper3 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1em 2fr 1em 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 1em;
+  /* justify-items: start; */
+  /* align-items: start; */
+  /* the above two properties align items within their columns - (default = stretch) */
+}
+
+.box1 {
+  -ms-flex-item-align: start;
+  -ms-grid-row-align: start;
+  align-self: start;
+}
+.box2 {
+  -ms-flex-item-align: end;
+  -ms-grid-row-align: end;
+  align-self: end;
+}
+.box3 {
+  -ms-grid-column-align: start;
+  justify-self: start;
+}
+.box4 {
+  -ms-grid-column-align: end;
+  justify-self: end;
+}
+
+/* these numbers reference grid lines (starting / ending) */
+.box5 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  grid-row: 3/5;
+  z-index: 1;
+}
+.box6 {
+  -ms-grid-column: 3;
+  grid-column: 3;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  grid-row: 3/5;
+}
+.box7 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+  -ms-grid-row: 1;
+  grid-row: 1;
+}
+.box8 {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 4;
+  grid-row: 2/6;
+}
+
+/* GRID 4 STYLES -------------------------------------------------------- */
+
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto 10px auto;
+  grid-template:
+    "header header header"
+    "menu main right"
+    "menu footer footer";
+  /* each line above should contain same # of elements */
+  grid-gap: 10px;
+  background-color: #2196f3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.item1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: header;
+}
+.item2 {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  grid-area: menu;
+}
+.item3 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: main;
+}
+.item4 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 5;
+  grid-area: right;
+}
+.item5 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 3;
+  grid-area: footer;
+}

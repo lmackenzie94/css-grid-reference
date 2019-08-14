@@ -1,0 +1,132 @@
+.wrapper > div {
+  background: #eee;
+  padding: 1em;
+}
+
+.wrapper > div:nth-child(odd) {
+  background: #ddd;
+}
+
+.info {
+  color: red;
+}
+
+/* GRID 1 STYLES -------------------------------------------------------- */
+
+.wrapper1 {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  /* grid-column-gap: 1em;
+  grid-row-gap: 1em; */
+  grid-gap: 1em;
+}
+
+/* GRID 2 STYLES -------------------------------------------------------- */
+
+/* use 'fr', NOT pixels, fractions, etc. */
+/* will reduce chance of margin/padding issues, esp when nesting */
+
+.wrapper2 {
+  display: grid;
+  /* grid-template-columns: 1fr 2fr 1fr; */
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
+  /* grid-auto-rows: 100px; */
+  /* using the above, large content would break out */
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.nested {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 70px;
+  grid-gap: 1em;
+}
+
+.nested > div {
+  border: 1px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* GRID 3 STYLES -------------------------------------------------------- */
+
+.wrapper3 {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 1em;
+  /* justify-items: start; */
+  /* align-items: start; */
+  /* the above two properties align items within their columns - (default = stretch) */
+}
+
+.box1 {
+  align-self: start;
+}
+.box2 {
+  align-self: end;
+}
+.box3 {
+  justify-self: start;
+}
+.box4 {
+  justify-self: end;
+}
+
+/* these numbers reference grid lines (starting / ending) */
+.box5 {
+  grid-column: 1/3;
+  grid-row: 3/5;
+  z-index: 1;
+}
+.box6 {
+  grid-column: 3;
+  grid-row: 3/5;
+}
+.box7 {
+  grid-column: 1/4;
+  grid-row: 1;
+}
+.box8 {
+  grid-column: 1;
+  grid-row: 2/6;
+}
+
+/* GRID 4 STYLES -------------------------------------------------------- */
+
+.grid-container {
+  display: grid;
+  grid-template:
+    "header header header"
+    "menu main right"
+    "menu footer footer";
+  /* each line above should contain same # of elements */
+  grid-gap: 10px;
+  background-color: #2196f3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.item1 {
+  grid-area: header;
+}
+.item2 {
+  grid-area: menu;
+}
+.item3 {
+  grid-area: main;
+}
+.item4 {
+  grid-area: right;
+}
+.item5 {
+  grid-area: footer;
+}
