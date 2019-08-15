@@ -17,6 +17,7 @@
 }
 
 /* GRID 1 STYLES -------------------------------------------------------- */
+/* uses a FEATURE QUERY to detect support for grid */
 
 .wrapper1 {
   display: flex;
@@ -24,7 +25,8 @@
 }
 
 .wrapper1 > div:nth-child(odd) {
-  flex: 1 0 calc(70% - 20px);
+  flex-basis: 68%;
+  /* calc() doesn't work in IE */
   margin-right: 20px;
   margin-bottom: 20px;
 }
@@ -41,7 +43,7 @@
     -ms-grid-columns: 70% 1em 30%;
     grid-template-columns: 70% 30%;
     /* grid-column-gap: 1em;
-  grid-row-gap: 1em; */
+    grid-row-gap: 1em; */
     grid-gap: 1em;
   }
 }
