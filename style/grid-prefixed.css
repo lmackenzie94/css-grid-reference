@@ -19,13 +19,31 @@
 /* GRID 1 STYLES -------------------------------------------------------- */
 
 .wrapper1 {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 70% 1em 30%;
-  grid-template-columns: 70% 30%;
-  /* grid-column-gap: 1em;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapper1 > div:nth-child(odd) {
+  flex: 1 0 calc(70% - 20px);
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.wrapper1 > div:nth-child(even) {
+  flex: 1 0 30%;
+  margin-bottom: 20px;
+}
+
+@supports (display: grid) {
+  .wrapper1 {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 70% 1em 30%;
+    grid-template-columns: 70% 30%;
+    /* grid-column-gap: 1em;
   grid-row-gap: 1em; */
-  grid-gap: 1em;
+    grid-gap: 1em;
+  }
 }
 
 /* GRID 2 STYLES -------------------------------------------------------- */
