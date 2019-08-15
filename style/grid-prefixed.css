@@ -36,7 +36,7 @@
   margin-bottom: 10px;
 }
 
-/* @supports (display: grid) {
+@supports (display: grid) {
   .wrapper1 {
     display: -ms-grid;
     display: grid;
@@ -44,10 +44,10 @@
     grid-template-columns: 70% 30%;
     /* grid-column-gap: 1em;
     grid-row-gap: 1em; */
-/* grid-gap: 1em;
+    grid-gap: 1em;
   }
-} */
-*/
+}
+
 /* GRID 2 STYLES -------------------------------------------------------- */
 
 /* use 'fr', NOT pixels, fractions, etc. */
