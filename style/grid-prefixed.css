@@ -22,19 +22,18 @@
 .wrapper1 {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 -10px;
 }
 
 .wrapper1 > div:nth-child(odd) {
-  flex: 1 0 63%;
-  /* calc() didn't work in IE */
-  /* no idea why 63% works */
-  margin-right: 20px;
-  margin-bottom: 20px;
+  flex: 1 0 calc(70% - 30px);
+  margin-right: 30px;
+  margin-bottom: 30px;
 }
 
 .wrapper1 > div:nth-child(even) {
   flex: 1 0 30%;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 @supports (display: grid) {
@@ -48,7 +47,6 @@
     grid-gap: 1em;
   }
 }
-
 /* GRID 2 STYLES -------------------------------------------------------- */
 
 /* use 'fr', NOT pixels, fractions, etc. */
