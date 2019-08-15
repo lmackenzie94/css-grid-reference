@@ -25,8 +25,9 @@
 }
 
 .wrapper1 > div:nth-child(odd) {
-  flex-basis: 68%;
-  /* calc() doesn't work in IE */
+  flex: 1 0 63%;
+  /* calc() didn't work in IE */
+  /* no idea why 63% works */
   margin-right: 20px;
   margin-bottom: 20px;
 }
